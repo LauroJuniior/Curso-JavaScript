@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        div#area {
+            font: normal 20pt Arial;/*tamanho da letra*/
+            background: green;
+            color:  white;
+            width: 200px;/*largura do quadrado*/
+            height: 200px;/*comprimento do quadrado*/
+            line-height: 200px;/*deixando a escrito centralizado no canto da borda verde*/
+            text-align: center;/*colocando a palavra Interajaa no centro */
+        }
+    </style>
+</head>
+<body>
+    <div id = "area">
+         Interajaa...
+    </div>
+
+    <script>
+        var a = window.document.getElementById('area')//esta fazendo a ligaçao do evento 'a' com o evendo 'area'
+
+        a.addEventListener('click', clicar)//funçao para reconhecer ao clicar
+        a.addEventListener('mouseenter',entrar)//funçao para reconhecer ao entrar
+        a.addEventListener('mouseout',sair)//funçao para reconhecer ao sair 
+
+        //obs: a funçao 'var a' tem que esta fora da function para server para outras funçao se estiver dentro de uma function so ira server para tal
+
+        function clicar()//esta chamando e evento clicar para fazer as funçao que estao dentro dele 
+        { 
+            a.innerText = 'Clicou!'//funçao de ao clicar escrever clicou!
+            a.style.background = 'red'//ao clicar o fundo fica vermelho
+        }
+        function entrar()//funçao de ao entrar no quadrado verde escrever entrou!
+        {
+            a.innerText = 'Entrou!'
+        }
+        function sair()//funçao de ao sair do quadrado verde escrever saiu!
+        {
+            a.innerText = 'Saiu!'
+            a.style.background = 'green'// ao sair volta a ficar verde 
+        }
+
+    </script>
+</body>
+</html>
